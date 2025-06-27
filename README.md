@@ -1,5 +1,7 @@
 # Dunk Verse
 
+A SportsFi AI x Blockchain Dapp built on Chiliz.
+
 ## Features 🚀
 
 ### 1. **NFT-Powered Content**
@@ -13,30 +15,31 @@
 
 ### 3. **Unified Token Economy**
 - Transactions are powered by **$FTO (DunkVerse Token)**, which is equivalent to:
-  - 1 $MNT
-- Simplifies transactions on each chain and promotes ecosystem interoperability.
+  - 1 $CHZ
+- Simplifies transactions on-chain and promotes ecosystem.
 
 ### 4. **Decentralized Betting Pool**
 - Fair and transparent NFT auctions ensure trust among bidders.
 - Smart contracts govern the auction process to ensure security.
 
 ### 5. **Social Connectivity**
-- Invite friends using **On-chain wallet ping**.
+- Invite friends using **Metamask to Metamask On-chain ping**.
 - Real-time leaderboard displays top-performing players in live quizzes.
 - View the average market value of NFTs on the platform.
 
 ## Deployed and Verified Contracts
 
-| Contract Name        | Description                                   | Mantle Testnet Deployed and Verified Contract Links                               |
-|----------------------|-----------------------------------------------|-----------------------------------------------------------------------------------|
-| `DunkVerse.sol`      | ERC-20 token contract for $FTO.               | https://sepolia.mantlescan.xyz/address/0xaF1968db67Dd7161D2AF04917b03240DE638ec15 |
-| `BettingPool.sol`    | Handles GameFi betting logic.                 | https://sepolia.mantlescan.xyz/address/0xaD488Cd332034434240828F987d6E6B991D48125 |
-| `AIGeneratedNFT.sol` | Manages NFT generation, supply, and transfers.| https://sepolia.mantlescan.xyz/address/0xEa8860639d003c9B746B94d077D6dD5052e7cF5d |
-| `InviteFriends.sol`  | Manages on-chain invitation and rewards.      | https://sepolia.mantlescan.xyz/address/0xfA224De740979215a51162d27C0Db1621A4712A9 |
+| Contract Name        | Description                                   | Chiliz Spicy Testnet Deployed and Verified Contract Links                                                  |
+|----------------------|-----------------------------------------------|------------------------------------------------------------------------------------------------------|
+| `Interacting Wallet` | Interacting On-chain                          | https://testnet.chiliscan.com/address/0xfA224De740979215a51162d27C0Db1621A4712A9                     |
+| `DunkVerse.sol`      | ERC-20 token contract for $FTO.               | https://testnet.chiliscan.com/token/0xfA224De740979215a51162d27C0Db1621A4712A9                       |
+| `BettingPool.sol`    | Handles GameFi betting logic.                 | https://testnet.chiliscan.com/address/0xDd78DB8Fa3CdC7267f68eA6F2ba9f47f25312eE1                     |
+| `AIGeneratedNFT.sol` | Manages NFT generation, supply, and transfers.| https://testnet.chiliscan.com/address/0x8bC6CdDAD9346F3F0BA9FA2C66DF4940b2efB376/events              |
+| `InviteFriends.sol`  | Manages on-chain invitation and rewards.      | https://testnet.chiliscan.com/address/0x0FF14768c7598e6F287bfC6451B888c406dfD5Bd/contract/88882/code |
 
 ## Key Technologies
 
-- **Blockchain**: Mantle Layer 2, Ethereum
+- **Blockchain**: Chiliz Spicy Testnet
 - **AI**: DALL-E3 GPT OpenAI Models for real-time quiz generation
 - **Oracles**: Third-party oracles API for live Top Shots NBA match data
 - **Smart Contracts**: Solidity
@@ -45,7 +48,7 @@
 - **Wallet Integration**: RainbowKit, Wagmi, Metamask APIs
 - **Tokenomics**: ERC-20, ERC-721 standard for $FTO token and NFTs
 
-## Tokenomics on Mantle 📊
+## Tokenomics on Chiliz 📊
 
 - **Symbol**: $FTO (DunkVerse Token)
 - **Supply**: 10 billion tokens
@@ -76,7 +79,7 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/AmaanSayyad/DunkVerse.git
+   git clone https://github.com/AmaanSayyad/DunkVerse-Chiliz.git
    ```
 2. Install dependencies:
    ```bash
@@ -99,4 +102,4 @@
 
 ## Connect. Play. Win.
 
-DunkVerse on Mantle Blockchain combines the love for sports and blockchain innovation, creating a vibrant ecosystem for fans and collectors. Join us today and experience the future of fan engagement!
+DunkVerse on Chiliz Blockchain combines the love for sports and blockchain innovation, creating a vibrant ecosystem for fans and collectors. Join us today and experience the future of fan engagement!
