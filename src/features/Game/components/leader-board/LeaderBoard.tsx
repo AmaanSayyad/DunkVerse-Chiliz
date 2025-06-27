@@ -30,6 +30,7 @@ const LeaderBoard = () => {
   const [NFTFlowId, setNFTFlowId] = useState<string | undefined>();
   const [uploadedVideos, setUploadedVideos] = useState([]);
   const { address, isConnected } = useAccount(); // Get the wallet address
+
   useEffect(() => {
     // Load previously uploaded videos for this wallet from localStorage
     const storedVideos = JSON.parse(
@@ -50,30 +51,70 @@ const LeaderBoard = () => {
               : 'flex flex-col gap-4 '
           }
         >
-          <div className='flex items-center justify-between p-2'>
+          <div className='flex items-center justify-between p-4'>
             {isConnected && (
-              <NextImage
-                src='/images/demo-profile.png'
-                alt='Image placeholder'
-                className='relative h-14 w-14 rounded-full border-2 border-primary-500'
-                imgClassName='object-cover rounded-full'
-                fill
-              />
+              <div className="flex items-center gap-3">
+                <div className="relative group">
+                  {/* Profile Image Glow Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-full blur-lg group-hover:blur-xl transition-all duration-300"></div>
+                  
+                  {/* Profile Image */}
+                  <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-purple-500/50 group-hover:ring-purple-400 transition-all duration-300">
+                    <NextImage
+                      src='/images/demo-profile.png'
+                      alt='Profile'
+                      className='relative w-full h-full'
+                      imgClassName='object-cover w-full h-full'
+                      fill
+                    />
+                  </div>
+                  
+                  {/* Online Status Indicator */}
+                  <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-dark animate-pulse">
+                    <div className="w-full h-full bg-green-400 rounded-full animate-ping"></div>
+                  </div>
+                </div>
+                
+                {/* User Info */}
+                <div className="hidden sm:block">
+                  <div className="text-gray-400 text-xs">
+                  </div>
+                </div>
+              </div>
             )}
 
-            <ConnectButton />
+            {/* Wallet Connection */}
+            <div className="flex items-center gap-2">
+              <ConnectButton />
+            </div>
           </div>
 
-          <div className='mx-auto w-[85vw] mobile-demo:w-[450px]'>
-            <TextField
-              startAdornment='search'
-              placeHolder='Search by player or team'
-            />
+          {/* Search Bar - Now below the profile section */}
+          <div className='mx-auto w-[85vw] mobile-demo:w-[450px] px-4'>
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+              <div className="relative bg-gradient-to-r from-gray-900/90 to-gray-800/90 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-1 shadow-2xl">
+                <TextField
+                  startAdornment='search'
+                  placeHolder='Search by player or team...'
+                  className="relative z-10"
+                  inputClassName="bg-transparent border-none text-white placeholder-gray-400 focus:ring-0 focus:border-none focus:outline-none text-base font-medium"
+                />
+              </div>
+              
+             
+            </div>
           </div>
         </div>
 
-        {/* StoryBar below the search bar */}
-        <StoryBar stories={storyData} />
+        {/* Story Section */}
+        <div className="relative">
+          <div className="mb-4 px-4">
+          </div>
+          
+          {/* StoryBar below the search bar */}
+          <StoryBar stories={storyData} />
+        </div>
 
         {/* Tab List */}
         <div className='!mt-5 flex flex-col items-center gap-4 overflow-hidden mobile-m:flex-row'>
@@ -88,40 +129,6 @@ const LeaderBoard = () => {
             </Tab>
           ))}
         </div>
-        {/* {Capacitor.getPlatform() === 'ios' ? (
-          <div
-            className='sticky top-0 z-[999] flex w-full bg-dark pb-4'
-            style={{
-              paddingTop: 'calc(2px + env(safe-area-inset-top))',
-            }}
-          >
-            <div className='w-[85vw] mobile-demo:w-[450px]'>
-              <div className='flex w-full items-center justify-center gap-1'>
-                <div className='flex w-full items-center justify-center gap-2'>
-                  <span className='text-2xl text-primary-500'>
-                    <CiMedal />
-                  </span>
-                  <span className='text-gradient-primary font-primary text-lg font-bold'>
-                    REWARDS
-                  </span>
-                </div>
-                <Currency />
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div className='flex items-center justify-center gap-1 py-4'>
-            <div className='flex w-full items-center justify-center gap-2'>
-              <span className='text-2xl text-primary-500'>
-                <CiMedal />
-              </span>
-              <span className='text-gradient-primary font-primary text-lg font-bold'>
-                REWARDS
-              </span>
-            </div>
-            <Currency />
-          </div>
-        )} */}
 
         <TabGroup>
           {Capacitor.getPlatform() === 'ios' ? (
@@ -175,24 +182,10 @@ const LeaderBoard = () => {
                 <div className='mx-auto my-10 overflow-hidden rounded-2xl sm:w-[26rem] sm:max-w-lg'>
                   <div className='mt-4 flex flex-col items-center gap-6'>
                     {uploadedVideos.map((video, index) => (
-                      // <video
-                      //   key={index}
-                      //   controls
-                      //   autoPlay
-                      //   src={video}
-                      //   className='rounded-lg shadow-lg'
-                      //   style={{
-                      //     width: '80%',
-                      //     maxWidth: '600px',
-                      //     height: 'auto',
-                      //   }}
-                      // />
-
                       <NFTThumbnail
                         key={index}
                         NFTFlowId='3208'
                         showPrice={true}
-                        // onClick={() => handleNFTThumbnailClick(NFTId)}
                       />
                     ))}
                   </div>

@@ -1,4 +1,5 @@
 import { FiSearch } from 'react-icons/fi';
+import { IoSearch } from 'react-icons/io5';
 
 import clsxm from '@/lib/clsxm';
 
@@ -30,8 +31,8 @@ const TextField = ({
         )}
       >
         {startAdornment === 'search' ? (
-          <span className='text-gray-500'>
-            <FiSearch size={24} />
+          <span className='text-gray-400 group-focus-within:text-purple-400 transition-colors duration-200'>
+            <IoSearch size={20} />
           </span>
         ) : (
           startAdornment
@@ -42,8 +43,9 @@ const TextField = ({
         id='main-search'
         className={clsxm(
           startAdornment ? '!pl-12' : '',
-          'w-full rounded-lg border border-gray-300 bg-gray-50 p-3.5 text-sm text-gray-900',
-          'focus:border-blue-500 focus:ring-blue-500',
+          'w-full rounded-xl border-0 bg-transparent p-4 text-sm text-white placeholder-gray-400',
+          'focus:outline-none focus:ring-0 focus:border-0',
+          'transition-all duration-200',
           inputClassName
         )}
         placeholder={placeHolder}
