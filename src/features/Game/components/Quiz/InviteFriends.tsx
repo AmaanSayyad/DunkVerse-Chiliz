@@ -140,28 +140,7 @@ const InviteFriends = ({ setOpen }: Props) => {
   const main = () => {
     return (
       <div>
-        {/* Token Balance Display */}
-        <div className="mb-4 p-3 bg-gray-800 rounded-lg">
-          <div className="flex justify-between items-center">
-            <span className="text-white">Your Token Balance:</span>
-            <div className="flex items-center">
-              {isLoadingBalance ? (
-                <span className="text-gray-400">Loading...</span>
-              ) : (
-                <span className="text-gradient-primary font-bold">
-                  {parseFloat(tokenBalance).toFixed(2)} FTO
-                </span>
-              )}
-              <button 
-                onClick={fetchTokenBalance}
-                className="ml-2 text-xs text-primary-500 hover:text-primary-400"
-                disabled={isLoadingBalance}
-              >
-                ↻ Refresh
-              </button>
-            </div>
-          </div>
-        </div>
+      
 
         {friends.map((friend, index) => {
           const isLoading = loadingStates[index];
