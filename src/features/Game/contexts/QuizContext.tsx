@@ -128,27 +128,30 @@ const QuizContextProvider = ({ children }: { children: ReactNode }) => {
   }, [address, signer, activeChain]);
 
   const makeRefferal = async () => {
-    try {
-      const contractAddress = activeChain ? contractAddresses[activeChain] : undefined;
-      if (!contractAddress) {
-        throw new Error('Unsupported chain');
-      }
-      if (!contractAddress) {
-        throw new Error('Unsupported chain');
-      }
-
-      const contractInstance = new ethers.Contract(
-        contractAddress.main,
-        mainContractABI,
-        signer
-      );
-
-      const tx = await contractInstance.createUser();
-      await tx.wait();
-      return tx;
-    } catch (error) {
-      console.log(error);
-    }
+    // Mock implementation that doesn't interact with the blockchain
+    console.log('[MOCK] Creating user reference');
+    
+    // Simulate a small delay
+    await new Promise(resolve => setTimeout(resolve, 500));
+    
+    // Return a mock transaction with proper type assertion
+    return {
+      hash: '0x' + Math.random().toString(16).substring(2, 42),
+      wait: async () => {
+        return {
+          status: 1,
+          events: []
+        };
+      },
+      // Add missing properties required by ContractTransaction
+      confirmations: 1,
+      from: '0x' + Math.random().toString(16).substring(2, 42),
+      nonce: 1,
+      gasLimit: ethers.BigNumber.from(21000),
+      data: '0x',
+      value: ethers.BigNumber.from(0),
+      chainId: 1
+    } as unknown as ethers.ContractTransaction;
   };
 
   const depositFunds = async ({

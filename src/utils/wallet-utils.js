@@ -17,9 +17,9 @@ const chilizTestnet = {
     public: { http: ['https://spicy-rpc.chiliz.com'] },
     default: { http: ['https://spicy-rpc.chiliz.com'] },
   },
-  iconUrl: 'https://chiliz.com/wp-content/uploads/2023/09/chiliz-logo.svg',
+  iconUrl: '/images/Chiliz.png',
   icon: {
-    url: 'https://chiliz.com/wp-content/uploads/2023/09/chiliz-logo.svg',
+    url: '/images/Chiliz.png',
     width: 512,
     height: 512,
     format: 'png'
